@@ -13,7 +13,7 @@ db.once('open', function callback () {
 	log.info("Connected to DB!");
 });
 
-var Schema = mongoose.Schema; // Schemas
+var Schema = mongoose.Schema; 
 var Images = new Schema({
 	kind: {
 		type: String,
@@ -28,7 +28,7 @@ var Article = new Schema({
 	description: { type: String, required: true },
 	images: [Images],
 	modified: { type: Date, default: Date.now }
-}); // validation
+}); 
 
 Article.path('title').validate(function (v) {
 	return v.length > 5 && v.length < 70;
